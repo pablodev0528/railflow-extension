@@ -13,11 +13,13 @@ const WebpackExtensionManifestPlugin = require('webpack-extension-manifest-plugi
 const baseManifestChrome = require('./src/baseManifest_chrome.json');
 const baseManifestFirefox = require('./src/baseManifest_firefox.json');
 const baseManifestOpera = require('./src/baseManifest_opera.json');
+const baseManifestEdge = require('./src/baseManifest_edge.json');
 
 const baseManifest = {
     chrome: baseManifestChrome,
     firefox: baseManifestFirefox,
     opera: baseManifestOpera,
+    edge: baseManifestEdge,
 };
 
 const envConfig = dotenv.parsed ?? {
