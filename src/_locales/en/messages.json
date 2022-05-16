@@ -1,0 +1,14 @@
+{
+    "appName": {
+        "message": "Railflow Extension",
+        "description": "Attach file preview extension."
+    },
+    "appDescription": {
+        "message": "Attach file preview extension.",
+        "description": "The description of the extension."
+    },
+    "btnTooltip": {
+        "message": "Railflow Extension",
+        "description": "Tooltip for the button."
+    }
+}
