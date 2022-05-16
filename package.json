@@ -16,6 +16,11 @@
         "build:firefox": "cross-env TARGET=firefox webpack --config webpack.config.prod.js",
         "build:opera": "cross-env TARGET=opera webpack --config webpack.config.prod.js",
         "build:edge": "cross-env TARGET=edge webpack --config webpack.config.prod.js",
+        "upload:chrome": "cross-env TARGET=chrome webpack --config webpack.config.upload.js",
+        "upload:firefox": "cross-env TARGET=firefox webpack --config webpack.config.upload.js",
+        "upload:opera": "cross-env TARGET=opera webpack --config webpack.config.upload.js",
+        "upload:edge": "cross-env TARGET=edge webpack --config webpack.config.upload.js",
+        "build:upload": "npm run upload:chrome && npm run upload:firefox && npm run upload:opera && npm run upload:edge",
         "build": "npm run build:chrome && npm run build:firefox && npm run build:opera && npm run build:edge",
         "lint-fix": "eslint --ext js,jsx,ts,tsx, src --fix"
     },

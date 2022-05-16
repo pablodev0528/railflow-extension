@@ -18,9 +18,24 @@ jobs:
             - name: Build
               run: |
                   npm ci
-                  npm run build
-            - name: Uploading Files on Artifact
+                  npm run build:upload
+            - name: Uploading Chrome Extension
               uses: actions/upload-artifact@v3
               with:
-                  name: railflow-artifact
-                  path: dist
+                  name: chrome
+                  path: dist/chrome
+            - name: Uploading Firefox Extension
+              uses: actions/upload-artifact@v3
+              with:
+                  name: firefox
+                  path: dist/firefox
+            - name: Uploading Opera Extension
+              uses: actions/upload-artifact@v3
+              with:
+                  name: opera
+                  path: dist/opera
+            - name: Uploading Edge Extension
+              uses: actions/upload-artifact@v3
+              with:
+                  name: edge
+                  path: dist/edge
