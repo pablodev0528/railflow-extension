@@ -22,12 +22,14 @@ const baseManifest = {
     edge: baseManifestEdge,
 };
 
-const envConfig = dotenv.parsed ?? {
-    DEV_DIR: 'dev',
-    DIST_DIR: 'dist',
-    TEMP_DIR: 'temp',
-    SRC_DIR: 'src',
-};
+const envConfig = dotenv.parsed
+    ? dotenv.parsed
+    : {
+          DEV_DIR: 'dev',
+          DIST_DIR: 'dist',
+          TEMP_DIR: 'temp',
+          SRC_DIR: 'src',
+      };
 
 const getHTMLPlugins = (browserDir, outputDir = 'dev', sourceDir = 'src') => [
     new HtmlWebpackPlugin({
