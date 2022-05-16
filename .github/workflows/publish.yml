@@ -6,8 +6,8 @@ on:
             - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-    build:
-        name: Build
+    publish:
+        name: Build and Publish
         runs-on: ubuntu-latest
 
         steps:
@@ -19,12 +19,6 @@ jobs:
               run: |
                   npm ci
                   npm run build
-    publish:
-        needs: [build]
-        name: Publish
-        runs-on: ubuntu-latest
-
-        steps:
             - name: Upload & release
               uses: mnao305/chrome-extension-upload@2.2.0
               with:
@@ -32,14 +26,3 @@ jobs:
                   extension-id: hogefuga(extension id)
                   client-id: ${{ secrets.CLIENT_ID }}
                   refresh-token: ${{ secrets.REFRESH_TOKEN }}
-    upload:
-        needs: [build]
-        name: Upload files on Artifact
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-
-            - uses: actions/upload-artifact@v3
-              with:
-                  name: railflow-artifact
-                  path: dist
