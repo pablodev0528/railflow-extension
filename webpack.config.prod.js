@@ -70,8 +70,8 @@ const generalConfig = {
 module.exports = [
     {
         ...generalConfig,
-        entry: getEntry(config?.SRC_DIR ?? 'src'),
-        output: getOutput(TARGET, config?.TEMP_DIR ?? 'tmp'),
+        entry: getEntry(config.SRC_DIR),
+        output: getOutput(TARGET, config.TEMP_DIR),
         plugins: [
             ...getCleanWebpackPlugin(TARGET, config.TEMP_DIR, config.DIST_DIR),
             new webpack.ProgressPlugin(),
