@@ -72,13 +72,13 @@ module.exports = [
         entry: getEntry(config.SRC_DIR),
         output: getOutput(TARGET, config.DIST_DIR),
         plugins: [
-            ...getCleanWebpackPlugin(TARGET, config.TEMP_DIR, config.DIST_DIR),
+            ...getCleanWebpackPlugin(TARGET, config.DIST_DIR, config.DIST_DIR),
             new webpack.ProgressPlugin(),
             ...getEslintPlugin(),
             ...getExtensionManifestPlugin(TARGET),
             ...getDefinePlugins({ NODE_ENV }),
-            ...getHTMLPlugins(TARGET, config.TEMP_DIR, config.SRC_DIR),
-            ...getCopyPlugins(TARGET, config.TEMP_DIR, config.SRC_DIR),
+            ...getHTMLPlugins(TARGET, config.DIST_DIR, config.SRC_DIR),
+            ...getCopyPlugins(TARGET, config.DIST_DIR, config.SRC_DIR),
         ],
     },
 ];
