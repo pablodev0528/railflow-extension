@@ -14,12 +14,13 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   node-version: 14
+
             - name: Build
               run: |
                   npm ci
                   npm run build
             - name: Uploading Files on Artifact
-            - uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v3
               with:
                   name: railflow-artifact
                   path: dist
