@@ -20,17 +20,6 @@
         "scripts": ["background/background.js"]
     },
     "permissions": ["<all_urls>"],
-    "options_ui": {
-        "page": "options/index.html"
-    },
-    "browser_action": {
-        "default_icon": {
-            "16": "assets/icons/icon-16.png",
-            "48": "assets/icons/icon-48.png"
-        },
-        "default_title": "TestTrail Extension",
-        "default_popup": "popup/index.html"
-    },
     "browser_specific_settings": {
         "gecko": {
             "strict_min_version": "54.0a1"

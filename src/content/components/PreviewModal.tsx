@@ -55,13 +55,11 @@ const PreviewModal = ({ el }: PreviewModalProps) => {
     }, []);
 
     const handleMouseLeave = useCallback(() => {
-        console.log('mouse leave');
         setOpen(false);
     }, [setOpen]);
 
     const handleMouseOver = useCallback(() => {
         setOpen(true);
-        console.log('mouse hover');
     }, [setOpen]);
 
     if (!imgUrl) {
