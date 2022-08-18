@@ -1,1 +1,1 @@
-# firefox_extension
+# testrail_extension
